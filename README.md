@@ -5,7 +5,6 @@ frontend Fashion Store project
 
 git pull origin main
 
-
 Потом редактирует свои файлы.
 
 После — сохраняет и делает:
