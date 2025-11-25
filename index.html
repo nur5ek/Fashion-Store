@@ -19,18 +19,24 @@
             </ul>
 
             <div class="header-icons">
-                <button class="icon-btn" aria-label="Поиск">
+                <button class="icon-btn" id="search-toggle" aria-label="Поиск">
                     <img src="images/search.png" alt="Поиск">
                 </button>
-                <button class="icon-btn" aria-label="Профиль">
+                <button class="icon-btn" id="profile-toggle" aria-label="Профиль">
                     <img src="images/user.png" alt="Профиль">
                 </button>
-                <button class="icon-btn" aria-label="Корзина">
+                <button class="icon-btn" id="cart-toggle" aria-label="Корзина">
                     <img src="images/shopping-cart.png" alt="Корзина">
+                    <span class="cart-count" id="cart-count">0</span>
                 </button>
             </div>
         </nav>
     </header>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Поиск по товарам...">
+        <button id="search-clear" class="search-clear">×</button>
+    </div>
 
     <section class="hero">
         <div class="hero-content">
@@ -69,72 +75,202 @@
     <section class="products" id="products">
         <h2>Новинки</h2>
         <div class="product-grid">
-            <div class="product-card">
+
+            <!-- 1. Классическое пальто -->
+            <div class="product-card"
+                data-name="Классическое пальто"
+                data-price="12990">
                 <div class="product-image">
                     <img src="images/coat.webp" alt="Классическое пальто">
                 </div>
                 <div class="product-info">
-                    <div class="product-name">
-                        Классическое пальто<div class="product-new">NEW!</div>
+
+                    <div class="product-name-row">
+                        <div class="product-name">Классическое пальто</div>
+                        <div class="product-new">NEW!</div>
                     </div>
-                    <div class="product-price">12 990₸</div>
+
+                    <div class="product-size">
+                        <label>
+                            Размер:
+                            <select>
+                                <option value="S">S</option>
+                                <option value="M" selected>M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="product-bottom">
+                        <div class="product-price">12 990₸</div>
+                        <button class="add-to-cart" type="button">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
+
+            <!-- 2. Хлопковая рубашка -->
+            <div class="product-card"
+                data-name="Хлопковая рубашка"
+                data-price="7990">
                 <div class="product-image">
                     <img src="images/shirt.webp" alt="Хлопковая рубашка">
                 </div>
                 <div class="product-info">
-                    <div class="product-name">
-                        Хлопковая рубашка<div class="product-new">NEW!</div>
+
+                    <div class="product-name-row">
+                        <div class="product-name">Хлопковая рубашка</div>
+                        <div class="product-new">NEW!</div>
                     </div>
-                    <div class="product-price">7 990₸</div>
+
+                    <div class="product-size">
+                        <label>
+                            Размер:
+                            <select>
+                                <option value="S">S</option>
+                                <option value="M" selected>M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="product-bottom">
+                        <div class="product-price">7 990₸</div>
+                        <button class="add-to-cart" type="button">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
+
+            <!-- 3. Джинсы slim fit -->
+            <div class="product-card"
+                data-name="Джинсы slim fit"
+                data-price="8990">
                 <div class="product-image">
-                    <img src="images/jeans.jpg" alt="Джинсы">
+                    <img src="images/jeans.jpg" alt="Джинсы slim fit">
                 </div>
                 <div class="product-info">
-                    <div class="product-name">
-                        Джинсы slim fit<div class="product-new">NEW!</div>
+
+                    <div class="product-name-row">
+                        <div class="product-name">Джинсы slim fit</div>
+                        <div class="product-new">NEW!</div>
                     </div>
-                    <div class="product-price">8 990₸</div>
+
+                    <div class="product-size">
+                        <label>
+                            Размер:
+                            <select>
+                                <option value="S">S</option>
+                                <option value="M" selected>M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="product-bottom">
+                        <div class="product-price">8 990₸</div>
+                        <button class="add-to-cart" type="button">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
+
+            <!-- 4. Худи -->
+            <div class="product-card"
+                data-name="Худи"
+                data-price="15990">
                 <div class="product-image">
                     <img src="images/hudi.avif" alt="Худи">
                 </div>
                 <div class="product-info">
-                    <div class="product-name">
-                        Худи<div class="product-new">NEW!</div>
+
+                    <div class="product-name-row">
+                        <div class="product-name">Худи</div>
+                        <div class="product-new">NEW!</div>
                     </div>
-                    <div class="product-price">15 990₸</div>
+
+                    <div class="product-size">
+                        <label>
+                            Размер:
+                            <select>
+                                <option value="S">S</option>
+                                <option value="M" selected>M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="product-bottom">
+                        <div class="product-price">15 990₸</div>
+                        <button class="add-to-cart" type="button">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
+
+            <!-- 5. Костюм -->
+            <div class="product-card"
+                data-name="Костюм"
+                data-price="24990">
                 <div class="product-image">
                     <img src="images/kostum.jpg" alt="Костюм">
                 </div>
                 <div class="product-info">
-                    <div class="product-name">
-                        Костюм<div class="product-new">NEW!</div>
+
+                    <div class="product-name-row">
+                        <div class="product-name">Костюм</div>
+                        <div class="product-new">NEW!</div>
                     </div>
-                    <div class="product-price">24 990₸</div>
+
+                    <div class="product-size">
+                        <label>
+                            Размер:
+                            <select>
+                                <option value="S">S</option>
+                                <option value="M" selected>M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="product-bottom">
+                        <div class="product-price">24 990₸</div>
+                        <button class="add-to-cart" type="button">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="product-card">
+
+            <!-- 6. Кожаная сумка -->
+            <div class="product-card"
+                data-name="Кожаная сумка"
+                data-price="13990">
                 <div class="product-image">
-                    <img src="images/sumka.jpg" alt="сумка">
+                    <img src="images/sumka.jpg" alt="Кожаная сумка">
                 </div>
                 <div class="product-info">
-                    <div class="product-name">
-                        Кожаная сумка<div class="product-new">NEW!</div>
+
+                    <div class="product-name-row">
+                        <div class="product-name">Кожаная сумка</div>
+                        <div class="product-new">NEW!</div>
                     </div>
-                    <div class="product-price">13 990₸</div>
+
+                    <div class="product-size">
+                        <label>
+                            Размер:
+                            <select>
+                                <option value="ONE">One size</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="product-bottom">
+                        <div class="product-price">13 990₸</div>
+                        <button class="add-to-cart" type="button">+</button>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -187,5 +323,42 @@
             <p>© 2024 AMIR Fashion Store. Все права защищены.</p>
         </div>
     </footer>
+    
+    <!-- Оверлей и панель корзины -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Корзина</h3>
+            <button class="cart-close" id="cart-close">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Итого: <span id="cart-total">0₸</span>
+            </div>
+            <button class="cta-button" id="checkout-btn">ОПЛАТИТЬ</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно профиля -->
+    <div class="modal-overlay" id="profile-overlay"></div>
+    <div class="profile-modal" id="profile-modal">
+        <div class="profile-header">
+            <h3>Профиль</h3>
+            <button class="profile-close" id="profile-close">×</button>
+        </div>
+        <form id="profile-form" class="profile-body">
+            <label>
+                Имя
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                Email
+                <input type="email" name="email" required>
+            </label>
+            <button type="submit" class="cta-button">Сохранить</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
